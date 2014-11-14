@@ -2,7 +2,9 @@ FROM ubuntu:14.04
 MAINTAINER Knut Ahlers <knut@ahlers.me>
 
 RUN useradd -m shoutcast && \
-    mkdir /opt/shoutcast
+    mkdir /opt/shoutcast && \
+    mkdir /var/log/shoutcast && \
+    chown shoutcast /var/log/shoutcast
 
 WORKDIR /opt/shoutcast
 
