@@ -1,10 +1,8 @@
 FROM ubuntu:14.04
 MAINTAINER Knut Ahlers <knut@ahlers.me>
 
-RUN useradd -m shoutcast && \
-    mkdir /opt/shoutcast && \
-    mkdir /var/log/shoutcast && \
-    chown shoutcast /var/log/shoutcast
+RUN mkdir /opt/shoutcast && \
+    mkdir /var/log/shoutcast 
 
 WORKDIR /opt/shoutcast
 
@@ -17,5 +15,4 @@ VOLUME ["/etc/shoutcast"]
 
 EXPOSE 8000
 
-USER shoutcast
 ENTRYPOINT ["/opt/shoutcast/sc_serv", "/etc/shoutcast/shoutcast.conf"]
