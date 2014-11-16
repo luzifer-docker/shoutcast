@@ -13,6 +13,6 @@ RUN apt-get update && \
 
 VOLUME ["/etc/shoutcast"]
 
-EXPOSE 8001
+EXPOSE 8001 8002
 
 ENTRYPOINT ["/opt/shoutcast/sc_serv", "/etc/shoutcast/shoutcast.conf"]
